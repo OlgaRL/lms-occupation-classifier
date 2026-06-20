@@ -2,7 +2,7 @@
 
 An AI pipeline that predicts an occupation code from free-text survey responses, built for a data science task.
 
-Every survey the CBS runs must be classified to an international occupation standard, today by professional human coders. This project prototypes an automated, text-based classifier to assist that process — easing coder workload and improving consistency.
+Every survey the CBS runs must be classified to an international occupation standard, today by professional human coders. This project prototypes an automated, text-based classifier to assist that process - easing coder workload and improving consistency.
 
 > **Note on the goal:** Per the task instructions, prediction accuracy is *not* the objective. The deliverable is a clean, end-to-end pipeline that runs without failures in Google Colab and produces prediction outputs. The numbers below are reported for context, not as a performance claim.
 
@@ -10,7 +10,7 @@ Every survey the CBS runs must be classified to an international occupation stan
 
 ## The problem
 
-- Surveys are routed at random to human coders and labeled by hand against the ISCO occupation standard — a heavy, recurring workload.
+- Surveys are routed at random to human coders and labeled by hand against the ISCO occupation standard - a heavy, recurring workload.
 - Sample checks show roughly **10% of manual codes are wrong**, and different coders label similar jobs differently.
 - Respondents may submit partial forms or re-submit several times; some records can't be fully coded (marked with `X`).
 
@@ -47,7 +47,7 @@ The solution pairs a **text-based ML core** with the **structure of the occupati
 1. **Clean** - drop `X`/null targets and duplicates; normalize codes to strings.
 2. **Combine text** - merge the seven description fields into one text feature.
 3. **Vectorize** - TF-IDF (1–2 grams) on the text; one-hot encode categoricals; scale numerics.
-4. **Classify (ML)** - multiclass Logistic Regression, `class_weight="balanced"`, `solver="lbfgs"`. A linear, regularized, interpretable model — deliberately chosen as the right fit for wide, small-sample data.
+4. **Classify (ML)** - multiclass Logistic Regression, `class_weight="balanced"`, `solver="lbfgs"`. A linear, regularized, interpretable model - deliberately chosen as the right fit for wide, small-sample data.
 5. **Validate with rules** - a coding-consistency analysis learns high-purity rules from the data; a hybrid layer applies a confident deterministic rule when available and falls back to the ML model otherwise.
 6. **Evaluate** - cross-validation and readable metrics at the right granularity.
 
