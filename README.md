@@ -44,12 +44,12 @@ The solution pairs a **text-based ML core** with the **structure of the occupati
 
 **Pipeline:**
 
-1. **Clean** — drop `X`/null targets and duplicates; normalize codes to strings.
-2. **Combine text** — merge the seven description fields into one text feature.
-3. **Vectorize** — TF-IDF (1–2 grams) on the text; one-hot encode categoricals; scale numerics.
-4. **Classify (ML)** — multiclass Logistic Regression, `class_weight="balanced"`, `solver="lbfgs"`. A linear, regularized, interpretable model — deliberately chosen as the right fit for wide, small-sample data.
-5. **Validate with rules** — a coding-consistency analysis learns high-purity rules from the data; a hybrid layer applies a confident deterministic rule when available and falls back to the ML model otherwise.
-6. **Evaluate** — cross-validation and readable metrics at the right granularity.
+1. **Clean** - drop `X`/null targets and duplicates; normalize codes to strings.
+2. **Combine text** - merge the seven description fields into one text feature.
+3. **Vectorize** - TF-IDF (1–2 grams) on the text; one-hot encode categoricals; scale numerics.
+4. **Classify (ML)** - multiclass Logistic Regression, `class_weight="balanced"`, `solver="lbfgs"`. A linear, regularized, interpretable model — deliberately chosen as the right fit for wide, small-sample data.
+5. **Validate with rules** - a coding-consistency analysis learns high-purity rules from the data; a hybrid layer applies a confident deterministic rule when available and falls back to the ML model otherwise.
+6. **Evaluate** - cross-validation and readable metrics at the right granularity.
 
 ### Why the ISCO hierarchy matters
 
